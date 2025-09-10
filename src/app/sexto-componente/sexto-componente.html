@@ -1,0 +1,28 @@
+
+<form [formGroup]="formulario">
+<!--Campos do Formulário-->
+@if(formulario.get('Nome').hasError('required') && formulario.get('nome').touched){<p class="alert alert-warining">campo nome é obrigatório</p>}
+
+@if(formulario.get('nome').hasError('minlength') && formulario.get('nome').touched){<p class="alert alert-warining"> O campo nome deve ter no mínimo 3 caracteres</p>}
+<input type="text" formControlName="Nome" class="form-control">
+<input type="number" formControlName="Idade" class="form-control">
+<input type="text" formControlName="Cidade" class="form-control">
+<!--Botões do Formulário-->
+<input type="button" value="Cadastrar" class="btn btn-primary">
+<input type="button" value="Alterar" class="btn btn-primary">
+<input type="button" value="Remover" class="btn btn-primary">
+<input type="button" value="Cancelar" class="btn btn-primary">
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Cidade</th>
+            <th>Selecionar</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
